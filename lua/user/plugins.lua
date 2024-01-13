@@ -39,11 +39,13 @@ packer.init {
 }
 
 -- Install your plugins here
-return packer.startup(function(use)
+return packer.startup({
+function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" }
   use "lunarvim/darkplus.nvim"
 
     -- cmp plugins
@@ -65,9 +67,29 @@ return packer.startup(function(use)
   use { "williamboman/mason-lspconfig.nvim" } -- mason extention
   use { "folke/trouble.nvim", "nvim-tree/nvim-web-devicons" } --for diagnostics
 
+  -- Telescope
+	use { "nvim-telescope/telescope.nvim" }
+
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter" }
+
+  -- Comment
+  use {"numToStr/Comment.nvim"}
+
+  -- Git
+	use { "lewis6991/gitsigns.nvim" }
+  -- File explorer
+  use { "kyazdani42/nvim-tree.lua" }
+
+  -- Buffer line
+  use {"akinsho/bufferline.nvim"}
+  use "moll/vim-bbye"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-end)
+end,
+config ={ clone_timeout = false }
+})
