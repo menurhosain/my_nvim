@@ -2,6 +2,7 @@ local servers = {
 	"lua_ls",
 	"cssls",
 	"html",
+	"emmet_ls",
 	"tsserver",
 	"dockerls",
 	"docker_compose_language_service",
@@ -41,6 +42,10 @@ for _, server in pairs(servers) do
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
+
+	if server == "emmet_ls" then
+    opts.filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" }
+	end
 
 	lspconfig[server].setup(opts)
 end

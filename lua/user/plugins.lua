@@ -88,6 +88,9 @@ function(use)
   -- Lualine for bottom status bar
   use { 'nvim-lualine/lualine.nvim' }
 
+  -- Fromatter
+  use { "stevearc/conform.nvim" }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
