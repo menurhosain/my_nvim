@@ -50,5 +50,9 @@ for _, server in pairs(servers) do
       "typescriptreact", "vue" }
   end
 
+  if server == "intelephense" then
+    opts.root_dir = lspconfig.util.root_pattern('wp-config.php', 'composer.json', '.git');
+  end
+
   lspconfig[server].setup(opts)
 end
