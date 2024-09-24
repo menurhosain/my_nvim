@@ -3,7 +3,7 @@ local servers = {
   "cssls",
   "html",
   "emmet_ls",
-  "tsserver",
+  "ts_ls",
   "dockerls",
   "docker_compose_language_service",
   "intelephense",
