@@ -46,7 +46,9 @@ return packer.startup({
     use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
     use { "windwp/nvim-autopairs", commit = "4fc96c8f3df89b6d23e5092d31c866c53a346347" }
+    --colorscheme
     use "lunarvim/darkplus.nvim"
+    use "folke/tokyonight.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp"         -- The completion plugin
