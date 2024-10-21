@@ -91,6 +91,9 @@ return packer.startup({
     -- Fromatter
     use { "stevearc/conform.nvim" }
 
+    -- for screen shot
+    use { "ellisonleao/carbon-now.nvim" }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
