@@ -64,7 +64,7 @@ return packer.startup({
     use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
     -- LSP
-    use { "neovim/nvim-lspconfig" }                             -- enable LSP
+    use { "neovim/nvim-lspconfig" }                             -- provide LSP server config that vim.lsp.config use under the hood
     use { "williamboman/mason.nvim" }                           -- simple to use language server installer
     use { "williamboman/mason-lspconfig.nvim" }                 -- mason extention
     use { "folke/trouble.nvim", "nvim-tree/nvim-web-devicons" } --for diagnostics

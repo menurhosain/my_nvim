@@ -1,7 +1,5 @@
 local servers = {
   "lua_ls",
-  "cssls",
-  "html",
   "emmet_ls",
   "ts_ls",
   "dockerls",
@@ -32,11 +30,6 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-  return
-end
-
 local opts = {}
 
 for _, server in pairs(servers) do
@@ -46,13 +39,16 @@ for _, server in pairs(servers) do
   }
 
   if server == "emmet_ls" then
-    opts.filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug",
-      "typescriptreact", "vue" }
+    opts.filetypes = {
+      "css", "html", "javascript", "javascriptreact",
+      "less", "sass", "scss", "svelte", "pug",
+      "typescript", "typescriptreact", "vue", "php"
+    }
   end
 
   if server == "intelephense" then
-    opts.root_dir = lspconfig.util.root_pattern('wp-config.php', 'composer.json', '.git');
+    opts.root_markers = { 'wp-config.php', 'composer.json', '.git' }
   end
 
-  lspconfig[server].setup(opts)
+  vim.lsp.config(server, opts);
 end

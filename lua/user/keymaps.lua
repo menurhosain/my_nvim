@@ -1,8 +1,8 @@
-local opts = { noremap = true, silent = true }
+local opts      = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- shorten function name
-local keymap  = vim.api.nvim_set_keymap
+local keymap    = vim.api.nvim_set_keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -40,7 +40,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 
 -- Insert --
--- Press hh fast to escape insert mode 
+-- Press hh fast to escape insert mode
 keymap("i", "hh", "<ESC>", opts)
 
 -- Visual --
@@ -67,7 +67,7 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- Telescope key map 
+-- Telescope key map
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 

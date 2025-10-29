@@ -10,16 +10,19 @@ conform.setup({
     -- -- Conform will run multiple formatters sequentially
     -- go = { "goimports", "gofmt" },
     -- Use a sub-list to run only the first available formatter
-    -- Keke sure install this formatter with mason
-    javascript = { { "prettierd", "prettier" } },
-    javascriptreact = { { "prettierd", "prettier" } },
-    typescript = { { "prettierd", "prettier" } },
-    typescriptreact = { { "prettierd", "prettier" } },
-    html = { { "prettierd", "prettier" } },
-    css = { { "prettierd", "prettier" } },
-    scss = { { "prettierd", "prettier" } },
-    less = { { "prettierd", "prettier" } },
+    -- make sure install this formatter with mason
+    javascript = { "prettierd", "prettier" },
+    javascriptreact = { "prettierd", "prettier" },
+    typescript = { "prettierd", "prettier" },
+    typescriptreact = { "prettierd", "prettier" },
+    html = { "prettierd", "prettier" },
+    php = { "php-cs-fixer" },
+    css = { "prettierd", "prettier" },
+    scss = { "prettierd", "prettier" },
+    less = { "prettierd", "prettier" },
   },
+
+  stop_after_first = true,
 
   -- If this is set, Conform will run the formatter on save.
   -- It will pass the table to conform.format().
