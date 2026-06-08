@@ -52,3 +52,13 @@ for _, server in pairs(servers) do
 
   vim.lsp.config(server, opts);
 end
+
+require("mason-tool-installer").setup({
+  ensure_installed = {
+    "prettierd",
+    "prettier",
+    "php-cs-fixer",
+  },
+  auto_update = false,
+  run_on_start = true,
+})

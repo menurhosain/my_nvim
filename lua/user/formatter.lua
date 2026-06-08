@@ -16,7 +16,7 @@ conform.setup({
     typescript = { "prettierd", "prettier" },
     typescriptreact = { "prettierd", "prettier" },
     html = { "prettierd", "prettier" },
-    php = { "php-cs-fixer" },
+    php = { "php_cs_fixer" },
     css = { "prettierd", "prettier" },
     scss = { "prettierd", "prettier" },
     less = { "prettierd", "prettier" },

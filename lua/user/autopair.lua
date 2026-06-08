@@ -5,12 +5,7 @@ if not status_ok then
 end
 
 npairs.setup {
-  check_ts = true,
-  ts_config = {
-    lua = { "string", "source" },
-    javascript = { "string", "template_string" },
-    java = false,
-  },
+  check_ts = false,
   disable_filetype = { "TelescopePrompt", "spectre_panel" },
   fast_wrap = {
     map = "<M-e>",
